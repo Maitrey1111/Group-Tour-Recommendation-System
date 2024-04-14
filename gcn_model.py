@@ -19,20 +19,12 @@ class GCNModel(nn.Module):
         for i in range(len(layers) - 1):
             self.gcn_layers.append(GCNConv(layers[i], layers[i + 1]))
 
-        # self.conv2 = GCNConv(layers[1], layers[2])
-        # self.conv3 = GCNConv(layers[2], layers[3])
-
     def forward(self, data):
         x, edge_index = data.x, data.edge_index
         edge_weight = torch.ones(edge_index.size(1))
 
         for layer in self.gcn_layers:
             x = layer(x, edge_index, edge_weight=edge_weight)
-            # x = torch.dropout(x, self.dropout, training=self.training)
-
-        # x = self.conv1(x, edge_index, edge_weight = edge_weight)
-        # x = self.conv2(x, edge_index, edge_weight = edge_weight)
-        # x = self.conv3(x, edge_index, edge_weight = edge_weight)
         x = torch.relu(x)
 
         return x
@@ -46,8 +38,6 @@ def modelParams():
         "hidden_dim4": 250,
         "hidden_dim5": 200,
         "hidden_dim6": 150,
-        "dropout": 0.3508751451898442,
-        "learning_rate": 0.007709514856453237,
     }
     layers = [
         len(destinations),

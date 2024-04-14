@@ -21,6 +21,7 @@ async def root():
     return {
         "Select group of users from:": "/users",
         "Get itinerary prediction from:": "/predict",
+        "Get itinerary prediction for a Custom Group:": "/predict-for-group",
     }
 
 
@@ -61,8 +62,7 @@ async def get_users():
         raise HTTPException(status_code=500, detail=f"Error retrieving users: {str(e)}")
 
 
-# Run the application (for development purposes)
-if __name__ == "__main__":
-    import uvicorn
+# if __name__ == "__main__":
+#     import uvicorn
 
-    uvicorn.run("main:app", host="localhost", port=8000, reload=True)
+#     uvicorn.run("main:app", host="htt", port=8000, reload=True)

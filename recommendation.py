@@ -170,6 +170,5 @@ def recommend(selected_users=["99662199@N00", "99395734@N08", "8638314@N05"]):
             ]
         )
         itinerary.append(name[0])
-    # print(len(itinerary), itinerary)
 
     return selected_users, itinerary
