@@ -1,4 +1,4 @@
-# Group Tour Recommendation System
+# Group Tour Itinerary Recommendation System
 #### Endpoints:
 ##### 1) /users (GET): to check list of all users
 ##### 2) /predict (GET): random Tourist group creation and Itinerary Recommendation
